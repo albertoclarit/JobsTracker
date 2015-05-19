@@ -30,6 +30,28 @@ module.exports = function (grunt) {
     require('time-grunt')(grunt);
 
     grunt.initConfig({
+        less: {
+            development: {
+                options: {
+                    compress: true,
+                    yuicompress: true,
+                    optimization: 2
+                },
+                files: {
+                    "src/main/webapp/assets/styles/main_less.css": "src/main/webapp/assets/less/main.less" // destination file and source file
+                }
+            },
+            production: {
+                options: {
+                    compress: true,
+                    yuicompress: true,
+                    optimization: 2
+                },
+                files: {
+                    "src/main/webapp/assets/styles/main_less.css": "src/main/webapp/assets/less/main.less" // destination file and source file
+                }
+            }
+        },
         yeoman: {
             // configurable paths
             app: require('./bower.json').appPath || 'app',
