@@ -6,4 +6,7 @@ angular.module('jobtrackerApp')
             $scope.account = account;
             $scope.isAuthenticated = Principal.isAuthenticated;
         });
+
+
+
     });

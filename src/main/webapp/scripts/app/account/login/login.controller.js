@@ -15,7 +15,7 @@ angular.module('jobtrackerApp')
             }).then(function () {
                 $scope.authenticationError = false;
                 if ($rootScope.previousStateName === 'register') {
-                    $state.go('home');
+                    $state.go('jobs');
                 } else {
                     $rootScope.back();
                 }

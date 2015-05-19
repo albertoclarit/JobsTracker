@@ -111,4 +111,6 @@ angular.module('jobtrackerApp', ['LocalStorageModule', 'tmh.dynamicLocale',
         tmhDynamicLocaleProvider.localeLocationPattern('bower_components/angular-i18n/angular-locale_{{locale}}.js');
         tmhDynamicLocaleProvider.useCookieStorage();
         tmhDynamicLocaleProvider.storageKey('NG_TRANSLATE_LANG_KEY');
+
+        $.material.init();
     });
