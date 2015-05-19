@@ -1,0 +1,34 @@
+{
+  "name": "string-mask",
+  "version": "0.1.1",
+  "homepage": "https://github.com/the-darc/string-mask",
+  "authors": [
+    "the-darc <darc.tec@gmail.com>"
+  ],
+  "description": "A string formatter and validator based on masks",
+  "main": "src/string-mask.js",
+  "keywords": [
+    "mask",
+    "formatter",
+    "string",
+    "validator",
+    "validation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "**/*.test.js",
+    "package.json"
+  ],
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "e6c58ebcfafdd87d47ca9b73b2f6219cd749a158"
+  },
+  "_source": "git://github.com/the-darc/string-mask.git",
+  "_target": "~0.1.1",
+  "_originalSource": "string-mask"
+}
