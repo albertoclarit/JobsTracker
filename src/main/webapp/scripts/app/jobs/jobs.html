@@ -1,0 +1,75 @@
+<div ng-cloak>
+   <legend>{{countJob}} Active Jobs</legend>
+
+    <div>
+        <button type="button" ng-show="showNewJob" class="btn btn-info btn-sm" ui-sref="addjob">Add New Job</button>
+        <div class="pull-right">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-success btn-sm">View All Finished</button>
+                <button type="button" class="btn btn-danger btn-sm">View All Denied</button>
+            </div>
+        </div>
+    </div>
+   <div ng-repeat="job in jobs">
+       <div ng-class="job.panelClass">
+           <div class="panel-heading">
+               <h3 class="panel-title">#{{$index+1}} {{job.title}}</h3>
+           </div>
+           <div class="panel-body">
+               <div class="row">
+                   <div class="col-sm-12"><progressbar class="progress-striped active"
+                                                       value="job.progressbarvalue"
+                                                       type="{{job.progressbartype}}"></progressbar></div>
+               </div>
+               <table class="table table-bordered">
+                   <tbody>
+                   <tr>
+                       <td>Request #</td>
+                       <td>{{job.requestnum}}</td>
+                       <td>Date Requested</td>
+                       <td>{{job.daterequested | date:'MM/dd/yyyy hh:mm a'}}</td>
+                   </tr>
+                   <tr>
+                       <td>Description</td>
+                       <td colspan="3">
+                           <p>
+                           {{job.description}}
+                           </p>
+                       </td>
+                   </tr>
+
+                   <tr>
+                       <td>Requested By</td>
+                       <td> {{job.requestedby}}</td>
+                       <td>Status</td>
+                       <td><strong ng-class="job.statusClass">{{job.statusdesc}}</strong></td>
+
+                   </tr>
+                   </tbody>
+               </table>
+           </div>
+           <div class="panel-footer">
+
+               <div class="pull-right">
+                   <div class="btn-group" role="group">
+                       <button type="button" class="btn btn-danger btn-sm" ng-show="job.showDenied">Denied</button>
+                       <button type="button" class="btn btn-warning btn-sm" ng-show="job.showPending">Pending</button>
+                       <button type="button" class="btn btn-primary btn-sm" ng-show="job.showApprove">Approve</button>
+                       <button type="button" class="btn btn-info btn-sm" ng-show="job.showOngoing">Review</button>
+                       <button type="button" class="btn btn-success btn-sm" ng-show="job.showFinished">Finished</button>
+                   </div>
+               </div>
+               <div class="clearfix"></div>
+           </div>
+       </div>
+       <hr/>
+   </div>
+
+
+
+
+
+
+
+    <div class="clearfix"></div>
+</div>

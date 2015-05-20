@@ -5,7 +5,7 @@ angular.module('jobtrackerApp')
         $scope.user = {};
         $scope.errors = {};
 
-        $scope.rememberMe = true;
+        $scope.rememberMe = false;
         $timeout(function (){angular.element('[ng-model="username"]').focus();});
         $scope.login = function () {
             Auth.login({
@@ -14,11 +14,13 @@ angular.module('jobtrackerApp')
                 rememberMe: $scope.rememberMe
             }).then(function () {
                 $scope.authenticationError = false;
-                if ($rootScope.previousStateName === 'register') {
+
+                $state.go('jobs');
+                /* if ($rootScope.previousStateName === 'register') {
                     $state.go('jobs');
                 } else {
                     $rootScope.back();
-                }
+                }*/
             }).catch(function () {
                 $scope.authenticationError = true;
             });

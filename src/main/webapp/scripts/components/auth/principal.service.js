@@ -24,6 +24,7 @@ angular.module('jobtrackerApp')
                     return false;
                 }
 
+
                 for (var i = 0; i < roles.length; i++) {
                     if (this.isInRole(roles[i])) {
                         return true;

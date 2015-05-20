@@ -145,3 +145,9 @@ ul#strength {
     width:20px;
 }
 /* end Password strength bar style */
+.validationMessage{
+
+    color:#a94442 !important;
+    font-size: small;
+    font-weight: bold;
+}

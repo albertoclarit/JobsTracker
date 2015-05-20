@@ -18,13 +18,19 @@
                     </a>
                 </li>
 
-                <li ui-sref-active="active">
+                <li ng-show="isAuthenticated()" ui-sref-active="active">
                     <a ui-sref="jobs">
-                        <span class="fa fa-graduation-cap"></span>
+                        <span class="glyphicon glyphicon-tasks"></span>
                         <span>Jobs</span>
                     </a>
                 </li>
 
+                <li ui-sref-active="active" ng-show="isAuthenticated()">
+                    <a ui-sref="logout">
+                        <span class="fa fa-power-off"></span>
+                        <span>Logout</span>
+                    </a>
+                </li>
             </ul>
         </div>
 

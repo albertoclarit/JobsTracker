@@ -5,7 +5,7 @@ angular.module('jobtrackerApp')
         $stateProvider
             .state('jobs', {
                 parent: 'site',
-                url: '/',
+                url: '/jobs',
                 data: {
                     roles: []
                 },
@@ -13,6 +13,21 @@ angular.module('jobtrackerApp')
                     'content@': {
                         templateUrl: 'scripts/app/jobs/jobs.html',
                         controller: 'JobsController'
+                    }
+                },
+                resolve: {
+                }
+            })
+            .state('addjob', {
+                parent: 'site',
+                url: '/addjob',
+                data: {
+                    roles: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/jobs/addjob.html',
+                        controller: 'AddJobController'
                     }
                 },
                 resolve: {

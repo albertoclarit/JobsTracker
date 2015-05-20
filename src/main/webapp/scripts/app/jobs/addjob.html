@@ -1,0 +1,55 @@
+<div ng-cloak>
+    <legend>Add a Job</legend>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <form class="form-horizontal" autocomplete="off" novalidate
+                  name="jobform" role="form"  novalidate
+                  angular-validator angular-validator-submit="save(jobform)">
+
+                <div class="form-group" show-errors>
+                    <label class="col-xs-2">Job Title</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control"
+                               ng-model="job.title"
+                               name="title"
+                               required
+                               validate-on="blur"
+                               required-message = "'Title is required'"/>
+                    </div>
+                </div>
+
+                <div class="form-group" show-errors>
+                    <label class="col-xs-2">Job Description</label>
+                    <div class="col-xs-10">
+                        <textarea
+                                class="form-control"
+                                ng-model="job.description"
+                                name="description"
+                                required
+                                validate-on="blur"
+                                required-message = "'Description is required'"
+                                rows="6"
+                                />
+                    </div>
+                </div>
+
+
+                <div class="form-group" show-errors>
+                    <label class="col-xs-2">Requested By</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control"
+                               ng-model="job.requestedby"
+                               name="requestedby"
+                               required
+                               validate-on="blur"
+                               required-message = "'Requested By is required'"/>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-sm" ng-click="beforesubmit(jobform)">Save Record</button>
+
+            </form>
+        </div>
+    </div>
+
+</div>
