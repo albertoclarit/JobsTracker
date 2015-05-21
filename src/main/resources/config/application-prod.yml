@@ -7,10 +7,10 @@ spring:
     datasource:
         dataSourceClassName: org.postgresql.ds.PGSimpleDataSource
         url: 
-        databaseName: JobTracker
-        serverName: localhost
-        username: JobTracker
-        password: 
+        databaseName: jobtracker
+        serverName: 192.168.3.201
+        username: postgres
+        password: 888R.34{'}UPc+k
 
     jpa:
         database-platform: org.hibernate.dialect.PostgreSQL82Dialect
