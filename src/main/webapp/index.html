@@ -20,6 +20,8 @@
         <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
         <link rel="stylesheet" href="bower_components/angular-busy/dist/angular-busy.css" />
         <link rel="stylesheet" href="bower_components/sweetalert/lib/sweet-alert.css" />
+        <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+        <link rel="stylesheet" href="bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css" />
         <!-- endbower -->
         <!-- endbuild -->
         <!-- build:css assets/styles/main.css -->
@@ -32,9 +34,8 @@
         <![endif]-->
         <div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak=""></div>
         <div ui-view="navbar" ng-cloak=""></div>
-        <div class="container">
+        <div class="container"  ng-cloak="">
             <div class="well" ui-view="content"></div>
-
             <div class="footer">
                 <p></p>
             </div>
@@ -92,6 +93,8 @@
         <script src="bower_components/angular-prompt/dist/angular-prompt.js"></script>
         <script src="bower_components/sweetalert/lib/sweet-alert.js"></script>
         <script src="bower_components/angular-sweetalert/SweetAlert.js"></script>
+        <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
+        <script src="bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -122,8 +125,8 @@
         <script src="scripts/components/util/base64.service.js"></script>
         <script src="scripts/components/util/parse-links.service.js"></script>
         <script src="scripts/app/account/account.js"></script>
-        <script src="scripts/app/account/activate/activate.js"></script>
-        <script src="scripts/app/account/activate/activate.controller.js"></script>
+<!--        <script src="scripts/app/account/activate/activate.js"></script>
+        <script src="scripts/app/account/activate/activate.controller.js"></script>-->
         <script src="scripts/app/account/login/login.js"></script>
         <script src="scripts/app/account/login/login.controller.js"></script>
         <script src="scripts/app/account/logout/logout.js"></script>
@@ -163,6 +166,7 @@
 
         <script src="scripts/app/jobs/jobs.js"></script>
         <script src="scripts/app/jobs/jobs.controller.js"></script>
+        <script src="scripts/components/jobs/jobservice.js"></script>
         <!-- endbuild -->
 </body>
 </html>

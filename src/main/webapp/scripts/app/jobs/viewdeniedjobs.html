@@ -1,0 +1,78 @@
+<div ng-cloak>
+    <legend>Finished Jobs</legend>
+
+    <div ng-repeat="job in jobs">
+        <div ng-class="job.panelClass">
+            <div class="panel-heading">
+                <h3 class="panel-title">#{{$index+1}} {{job.statusdesc}} - {{job.title}}</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-sm-12"><progressbar class="progress-striped active"
+                                                        value="job.progressbarvalue"
+                                                        type="{{job.progressbartype}}"></progressbar></div>
+                </div>
+                <h4>Job Details</h4>
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <td>Request #</td>
+                        <td>{{job.requestnum}}</td>
+                        <td>Date Requested</td>
+                        <td>{{job.daterequested | date:'MM/dd/yyyy hh:mm a'}}</td>
+                    </tr>
+                    <tr>
+                        <td>Description</td>
+                        <td colspan="3">
+                            <p>
+                                {{job.description}}
+                            </p>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Requested By</td>
+                        <td> {{job.requestedby}}</td>
+                        <td>Current Status</td>
+                        <td><strong ng-class="job.statusClass">{{job.statusdesc}}</strong></td>
+
+                    </tr>
+                    </tbody>
+                </table>
+                <jobstatus job="job"></jobstatus>
+            </div>
+            <div class="panel-footer">
+
+                <div class="pull-right">
+                    <div class="btn-group" role="group">
+                        <button type="button" class="btn btn-danger btn-sm" ng-show="job.showDenied" ui-sref="jobdenied({id:job.id})">Deny</button>
+                        <button type="button" class="btn btn-warning btn-sm" ng-show="job.showPending" ui-sref="jobpending({id:job.id})">Pending</button>
+                        <button type="button" class="btn btn-primary btn-sm" ng-show="job.showApprove" ui-sref="jobapproved({id:job.id})">Approve By PPM</button>
+                        <button type="button" class="btn btn-info btn-sm" ng-show="job.showOngoing" ui-sref="jobreview({id:job.id})">Review By Admin </button>
+                        <button type="button" class="btn btn-success btn-sm" ng-show="job.showFinished" ui-sref="jobfinished({id:job.id})">Finished</button>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <hr/>
+    </div>
+
+    <div>
+        Page {{deniedjobspaging.currentPage}} of {{deniedjobspaging.totalItems/deniedjobspaging.itemsPerPage | number:0}}
+        <pagination boundary-links="true"
+                    total-items="deniedjobspaging.totalItems"
+                    items-per-page="deniedjobspaging.itemsPerPage"
+                    ng-model="deniedjobspaging.currentPage"
+                    class="pagination-sm pull-right"
+                    max-size="deniedjobspaging.maxSize"
+                    previous-text="&lsaquo;"
+                    next-text="&rsaquo;"
+                    first-text="&laquo;"
+                    last-text="&raquo;"
+                    ng-change="deniedjobspagingChanged()"></pagination>
+
+    </div>
+    <br/>
+    <button type="button" class="btn btn-primary btn-sm" ui-sref="jobs">Back to List</button>
+</div>

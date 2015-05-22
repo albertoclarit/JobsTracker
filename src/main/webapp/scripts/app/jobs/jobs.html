@@ -1,19 +1,19 @@
-<div ng-cloak>
+<div ng-cloak style="overflow-y: auto">
    <legend>{{countJob}} Active Jobs</legend>
 
     <div>
         <button type="button" ng-show="showNewJob" class="btn btn-info btn-sm" ui-sref="addjob">Add New Job</button>
         <div class="pull-right">
             <div class="btn-group" role="group">
-                <button type="button" class="btn btn-success btn-sm">View All Finished</button>
-                <button type="button" class="btn btn-danger btn-sm">View All Denied</button>
+                <button type="button" class="btn btn-success btn-sm" ui-sref="viewfinishedjobs">View All Finished</button>
+                <button type="button" class="btn btn-danger btn-sm" ui-sref="viewdeniedjobs">View All Denied</button>
             </div>
         </div>
     </div>
    <div ng-repeat="job in jobs">
        <div ng-class="job.panelClass">
            <div class="panel-heading">
-               <h3 class="panel-title">#{{$index+1}} {{job.title}}</h3>
+               <h3 class="panel-title">#{{$index+1}} {{job.statusdesc}} - {{job.title}}</h3>
            </div>
            <div class="panel-body">
                <div class="row">
@@ -21,6 +21,7 @@
                                                        value="job.progressbarvalue"
                                                        type="{{job.progressbartype}}"></progressbar></div>
                </div>
+               <h4>Job Details</h4>
                <table class="table table-bordered">
                    <tbody>
                    <tr>
@@ -41,22 +42,24 @@
                    <tr>
                        <td>Requested By</td>
                        <td> {{job.requestedby}}</td>
-                       <td>Status</td>
+                       <td>Current Status</td>
                        <td><strong ng-class="job.statusClass">{{job.statusdesc}}</strong></td>
 
                    </tr>
                    </tbody>
                </table>
+
+               <jobstatus job="job"></jobstatus>
            </div>
            <div class="panel-footer">
 
                <div class="pull-right">
                    <div class="btn-group" role="group">
-                       <button type="button" class="btn btn-danger btn-sm" ng-show="job.showDenied">Denied</button>
-                       <button type="button" class="btn btn-warning btn-sm" ng-show="job.showPending">Pending</button>
-                       <button type="button" class="btn btn-primary btn-sm" ng-show="job.showApprove">Approve</button>
-                       <button type="button" class="btn btn-info btn-sm" ng-show="job.showOngoing">Review</button>
-                       <button type="button" class="btn btn-success btn-sm" ng-show="job.showFinished">Finished</button>
+                       <button type="button" class="btn btn-danger btn-sm" ng-show="job.showDenied" ui-sref="jobdenied({id:job.id})">Deny</button>
+                       <button type="button" class="btn btn-warning btn-sm" ng-show="job.showPending" ui-sref="jobpending({id:job.id})">Pending</button>
+                       <button type="button" class="btn btn-primary btn-sm" ng-show="job.showApprove" ui-sref="jobapproved({id:job.id})">Approve By PPM</button>
+                       <button type="button" class="btn btn-info btn-sm" ng-show="job.showOngoing" ui-sref="jobreview({id:job.id})">Review By Admin </button>
+                       <button type="button" class="btn btn-success btn-sm" ng-show="job.showFinished" ui-sref="jobfinished({id:job.id})">Finished</button>
                    </div>
                </div>
                <div class="clearfix"></div>

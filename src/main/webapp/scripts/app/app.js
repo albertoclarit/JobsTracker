@@ -2,7 +2,8 @@
 
 angular.module('jobtrackerApp', ['LocalStorageModule', 'tmh.dynamicLocale',
     'ngResource', 'ui.router', 'ngCookies', 'pascalprecht.translate', 'ngCacheBuster', 'infinite-scroll','ui.bootstrap',
-'restangular','ui.bootstrap.showErrors','angularValidator','cgBusy','cgPrompt','oitozero.ngSweetAlert'])
+'restangular','ui.bootstrap.showErrors','angularValidator','cgBusy','cgPrompt','oitozero.ngSweetAlert',
+    'angular-loading-bar','ngAnimate','ui.bootstrap.datetimepicker','ui.bootstrap'])
 
     .run(function ($rootScope, $location, $window, $http, $state, $translate, Auth, Principal, Language, ENV, VERSION) {
         $rootScope.ENV = ENV;
@@ -116,4 +117,8 @@ angular.module('jobtrackerApp', ['LocalStorageModule', 'tmh.dynamicLocale',
 
 
         $.material.init();
+    }).factory('RestangularFull', function(Restangular) {
+        return Restangular.withConfig(function(RestangularConfigurer) {
+            RestangularConfigurer.setFullResponse(true);
+        });
     });

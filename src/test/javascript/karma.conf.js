@@ -52,6 +52,8 @@ module.exports = function (config) {
             'main/webapp/bower_components/angular-prompt/dist/angular-prompt.js',
             'main/webapp/bower_components/sweetalert/lib/sweet-alert.js',
             'main/webapp/bower_components/angular-sweetalert/SweetAlert.js',
+            'main/webapp/bower_components/angular-loading-bar/build/loading-bar.js',
+            'main/webapp/bower_components/angular-bootstrap-datetimepicker/src/js/datetimepicker.js',
             'main/webapp/bower_components/angular-mocks/angular-mocks.js',
             // endbower
             'main/webapp/scripts/app/app.js',

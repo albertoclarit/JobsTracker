@@ -1,0 +1,68 @@
+<div ng-cloak>
+    <legend>Mark this Job as Pending</legend>
+
+    <div ng-class="job.panelClass">
+        <div class="panel-heading">
+            <h3 class="panel-title">#{{$index+1}} {{job.statusdesc}} - {{job.title}}</h3>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-sm-12"><progressbar class="progress-striped active"
+                                                    value="job.progressbarvalue"
+                                                    type="{{job.progressbartype}}"></progressbar></div>
+            </div>
+            <h4>Job Details</h4>
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <td>Request #</td>
+                    <td>{{job.requestnum}}</td>
+                    <td>Date Requested</td>
+                    <td>{{job.daterequested | date:'MM/dd/yyyy hh:mm a'}}</td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td colspan="3">
+                        <p>
+                            {{job.description}}
+                        </p>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Requested By</td>
+                    <td> {{job.requestedby}}</td>
+                    <td>Current Status</td>
+                    <td><strong ng-class="job.statusClass">{{job.statusdesc}}</strong></td>
+
+                </tr>
+                </tbody>
+            </table>
+            <jobstatus job="job"></jobstatus>
+            <div class="form-horizontal" style="padding: 15px">
+                <div class="form-group">
+                    <label class="control-label">Reason For Pending</label>
+                    <textarea
+                            class="form-control"
+                            ng-model="param.reason"
+                            rows="4"></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">Person/Office Concerned</label>
+                    <input type="text"
+                            class="form-control"
+                            ng-model="param.personofficeconcerned"/>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-warning btn-sm" ng-click="pending(job)">Mark as Pending</button>
+                <button type="button" class="btn btn-primary btn-sm" ui-sref="jobs">Back to List</button>
+
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+
+</div>

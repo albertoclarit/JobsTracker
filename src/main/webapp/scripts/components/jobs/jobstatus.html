@@ -1,0 +1,102 @@
+<div>
+    <!--------------------------------- Status Reasons ------------------------------------->
+    <!--    Deny Reason---->
+    <div ng-if="job.showDeniedDetail">
+        <h4 class="text-danger">Deny Reasons</h4>
+        <table class="table table-bordered">
+            <tbody>
+            <tr>
+                <td>Person/Office Concerned</td>
+                <td>{{job.datedenied}}</td>
+            </tr>
+            <tr>
+                <td>Reason Denied</td>
+                <td>{{job.reasondenied}}</td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!--    Pending Reason---->
+    <div ng-if="job.showPendingDetail">
+        <h4 class="text-warning">Pending Reasons</h4>
+        <table class="table table-bordered" >
+            <tbody>
+            <tr>
+                <td>Person/Office Concerned</td>
+                <td>{{job.personofficeconcerned}}</td>
+            </tr>
+            <tr>
+                <td>Reason Pending</td>
+                <td>{{job.reasonpending}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--    Approve Details---->
+    <div ng-if="job.showApproveDetail">
+        <h4 class="text-primary">Approval Details</h4>
+        <table class="table table-bordered" >
+            <tbody>
+            <tr>
+                <td>Implementing Person/Office</td>
+                <td>{{job.implementingentity}}</td>
+            </tr>
+            <tr>
+                <td>Expected Date Completion</td>
+                <td>{{job.expecteddatecompletion | date:'MMM dd, yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>Remarks</td>
+                <td>{{job.approveremarks}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--    Reviewed Details---->
+    <div ng-if="job.showOngoingDetail">
+        <h4 class="text-info">Reviewed Details</h4>
+        <table class="table table-bordered" >
+            <tbody>
+            <tr>
+                <td>Date Started</td>
+                <td>{{job.datestarted | date:'MMM dd, yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>Expected Date Completion</td>
+                <td>{{job.ongoingexpecteddatecompletion | date:'MMM dd, yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>Remarks</td>
+                <td>{{job.ongoingremarks}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!--    Finished Details---->
+    <div ng-if="job.showFinishedDetail">
+        <h4 class="text-success">Finished Details</h4>
+        <table class="table table-bordered" >
+            <tbody>
+            <tr>
+                <td>Date Finished</td>
+                <td>{{job.datefinished | date:'MMM dd, yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>Remarks</td>
+                <td>{{job.finishedremarks}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--------------------------------- End Status Reasons ------------------------------------->
+</div>
+
