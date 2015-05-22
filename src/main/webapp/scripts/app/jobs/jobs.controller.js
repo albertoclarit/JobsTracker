@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('jobtrackerApp')
-    .controller('JobsController', function ($scope, Principal,Restangular,JobsFormatterService) {
+    .controller('JobsController', function ($scope, Principal,Restangular,JobsFormatterService,$rootScope) {
         $scope.showNewJob = false;
         Principal.identity().then(function(account) {
             $scope.account = account;
             $scope.isAuthenticated = Principal.isAuthenticated;
             $scope.showNewJob = Principal.isInAnyRole(['ROLE_ADMIN','ROLE_USER']);
+
+            $rootScope.currentlogin = ' [' + account.login + ']';
         });
 
 

@@ -4,11 +4,17 @@
             <span class="hipster img-responsive img-rounded"></span>
         </div>
         <div class="col-md-8">
-            <h1>Welcome [{{account.login}}] to Cristal e-College Job Tracking System</h1>
+
 
             <div ng-show="!isAuthenticated()">
+                <h1>Welcome  to Cristal e-College Job Tracking System</h1>
                 <p class="lead">Please click the Login button below to begin</p>
                 <button  type="button" class="btn btn-info btn-sm" ui-sref="login">Login</button>
+            </div>
+            <div ng-show="isAuthenticated()">
+                <h1>Welcome [{{account.login}}] to Cristal e-College Job Tracking System</h1>
+                <button  type="button" class="btn btn-info btn-sm" ui-sref="settings">Change User Details</button>
+                <button  type="button" class="btn btn-warning btn-sm" ui-sref="password">Change Password</button>
             </div>
 
         </div>

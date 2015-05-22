@@ -22,7 +22,7 @@ import org.joda.time.DateTime;
 @Entity
 @Table(name = "JHI_USER")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class User extends AbstractAuditingEntity implements Serializable {
+public class User extends AbstractAuditingEntity implements Serializable,RestEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

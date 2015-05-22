@@ -25,6 +25,14 @@
                     </a>
                 </li>
 
+                <li  ui-sref-active="active" ng-show="isInRole('ROLE_ADMIN')">
+                    <a ui-sref="users">
+                        <span class="glyphicon glyphicon-user"></span>
+                        <span>Users</span>
+                    </a>
+                </li>
+
+
                 <li ui-sref-active="active" ng-show="isAuthenticated()">
                     <a ui-sref="logout">
                         <span class="fa fa-power-off"></span>
