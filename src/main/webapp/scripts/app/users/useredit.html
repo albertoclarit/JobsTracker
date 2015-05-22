@@ -1,3 +1,83 @@
 <div ng-cloak>
-    <legend>{{ (user.id ? 'Edit':'Add') }}   Users</legend>
+    <legend>{{ (user.id ? 'Edit':'Add') }}   User</legend>
+
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <form class="form-horizontal" autocomplete="off" novalidate
+                  name="userform" role="form"  novalidate
+                  angular-validator angular-validator-submit="save(userform)">
+
+                <div class="form-group" show-errors>
+                    <label class="col-xs-2">Login</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control"
+                               ng-model="user.login"
+                               name="login"
+                               required
+                               validate-on="blur"
+                               required-message = "'Login is required'"/>
+                    </div>
+                </div>
+
+                <div class="form-group" show-errors>
+                    <label class="col-xs-2">Lastname</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control"
+                               ng-model="user.lastName"
+                               name="lastName"
+                               required
+                               validate-on="blur"
+                               required-message = "'Lastname is required'"/>
+                    </div>
+                </div>
+
+                <div class="form-group" show-errors>
+                    <label class="col-xs-2">Firstname</label>
+                    <div class="col-xs-10">
+                        <input type="text" class="form-control"
+                               ng-model="user.firstName"
+                               name="firstName"
+                               required
+                               validate-on="blur"
+                               required-message = "'Firstname is required'"/>
+                    </div>
+                </div>
+
+                <div class="form-group" show-errors>
+                    <label class="col-xs-2">Email</label>
+                    <div class="col-xs-10">
+                        <input type="email" class="form-control"
+                               ng-model="user.email"
+                               name="email"
+                               required
+                               validate-on="blur"
+                               required-message = "'Email is required'"
+                               invalid-message="'Thats not a real email address'"
+                                />
+                    </div>
+                </div>
+
+                <div class="form-group" show-errors>
+                    <label class="col-xs-2">Role</label>
+                    <div class="col-xs-10">
+                        <select name="role"
+                                ng-model="param.role"
+                                class="form-control"
+                                required
+                                validate-on="blur"
+                                required-message = "'Role is required'"
+                                ng-options="auth.name as auth.name for auth in authorities "
+                                >
+
+                        </select>
+
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-info btn-sm" ng-click="beforesubmit(userform)">Save Record</button>
+
+            </form>
+        </div>
+    </div>
+
 </div>

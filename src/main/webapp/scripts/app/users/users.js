@@ -33,4 +33,34 @@ angular.module('jobtrackerApp')
                 resolve: {
                 }
             })
+            .state('usersedit', {
+                parent: 'site',
+                url: '/users/:id',
+                data: {
+                    roles: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/users/useredit.html',
+                        controller: 'EditUserController'
+                    }
+                },
+                resolve: {
+                }
+            })
+            .state('changepassword', {
+                parent: 'site',
+                url: '/changepassword/:id',
+                data: {
+                    roles: []
+                },
+                views: {
+                    'content@': {
+                        templateUrl: 'scripts/app/users/changepassword.html',
+                        controller: 'ChangePasswordController'
+                    }
+                },
+                resolve: {
+                }
+            })
     });
