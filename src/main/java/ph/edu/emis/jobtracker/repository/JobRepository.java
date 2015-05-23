@@ -12,6 +12,6 @@ import java.util.List;
  */
 public interface JobRepository extends JpaRepository<Job,Long>,QueryDslPredicateExecutor {
 
-    @Query("select j from Job j where (j.denied is null or j.denied = false ) and (j.finished <> true)")
+    @Query("select j from Job j where (j.denied is null or j.denied = false ) and (j.finished <> true  or j.finished is null)")
     List<Job> getActive();
 }
