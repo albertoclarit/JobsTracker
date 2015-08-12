@@ -32,7 +32,8 @@ local.properties
 .settings/**
 .loadpath
 /src/main/resources/rebel.xml
-
+/src/generated-sources
+deploy.zip
 # External tool builders
 .externalToolBuilders/**
 
