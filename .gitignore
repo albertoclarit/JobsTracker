@@ -33,6 +33,7 @@ local.properties
 .loadpath
 /src/main/resources/rebel.xml
 /src/generated-sources
+/src/main/webapp/bower_components
 deploy.zip
 # External tool builders
 .externalToolBuilders/**
