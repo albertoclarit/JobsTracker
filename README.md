@@ -18,7 +18,7 @@ Jobstracker depends on the following Open-Source frameworks and Libraries
 6. PostgreSQL (can be modified to use other DBMS)
 7. Thanks to JHipster for making these easier.
 
-#### Running the Project
+#### Installing Dependencies (applicable for Windows only)
 
 
 1. Install [JAVA SDK 1.7+](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
@@ -30,11 +30,37 @@ Jobstracker depends on the following Open-Source frameworks and Libraries
   * Make sure maven.bat is can be found in your path.
   * Set the PATH Environmental Variables ![alt text](https://github.com/albertoclarit/JobsTracker/blob/master/docs/setpath.png "Set Path")
   * Add JAVA_HOME to your environmental variables
+![alt text](https://github.com/albertoclarit/JobsTracker/blob/master/docs/setjavahome.png "Set Path")
+  * in the command line type `mvn` it should NOT be `Bad Command or Filename`. If it shows
+   `[INFO] Scanning for projects..` then maven was installed successfully
+   
+3. Install [NodeJs](https://nodejs.org/en/) and install the recommended installer
+  * make sure typing `node --version` will not result to an error message
+      
+4. Installing NodeJS packages
+  * Install Grunt by typing `npm install -g grunt-cli`
+  * Install Bower by typing `npm install -g bower`
 
+5. Download and Install [Postgresql](http://www.enterprisedb.com/products-services-training/pgdownload#windows)
+  * Please specify for now the username is "postgres" and password is "password"
+  * After installation, in PGAdmin create a database named "jobtracker"
+  
+6. Install Git for Windows at [link](https://git-scm.com/download/win)
+  * Command `git` should not result to an error
+  
+7. Clone JobTracker project
+  * Open terminal
+  * Go to your root drive by typing  cd \
+  * type `git clone https://github.com/albertoclarit/JobsTracker.git Jobtracker`
 
-
-
-
+8. Install JobTracker Node Components
+  * From root of c: type `cd Jobtracker`
+  * type `bower install`
+  * there are packages that are in conflict and needs to be answered in the choices. 
+  Choose the option that is needed by JobTracker
+  ![alt text](https://github.com/albertoclarit/JobsTracker/blob/master/docs/choosebower.png "Choose")
+  
+   
 
 
 
