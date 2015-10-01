@@ -61,6 +61,17 @@ Jobstracker depends on the following Open-Source frameworks and Libraries
   ![alt text](https://github.com/albertoclarit/JobsTracker/blob/master/docs/choosebower.png "Choose")
   
    
+9. Build the project
+  * Type `mvn -Pprod package`
+  
+10.) Run the project
+  * from Jobtracker folder type `cd target`
+  * You should find the JobTracker.war in that folder
+  * run it by typing `java -jar JobTracker.war  --spring.profiles.active=prod`
+
+
+
+#### During Development
 
 
 
