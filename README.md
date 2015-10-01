@@ -73,6 +73,13 @@ Jobstracker depends on the following Open-Source frameworks and Libraries
 
 #### During Development
 
-
+1. In Intellij,Eclipse or Netbeans just open the Diretory from the IDE.
+   * Point your runnable static method in Application class.
+   * Run your Application (it depends on your IDE how) Please research on their corresponding website how
+2. Running Angular JS in debug mode   
+   * type `grunt serve` in the JobTracker folder.
+    
+    
+    
 
 
