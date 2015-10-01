@@ -7,7 +7,7 @@
     <include file="classpath:config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/201505200438pm.sql" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/201505200932pm.sql" relativeToChangelogFile="false"/>
-
+    <include file="classpath:config/liquibase/changelog/addfk.sql" relativeToChangelogFile="false"/>
 
     <!-- JHipster will add liquibase changelogs here -->
 </databaseChangeLog>
